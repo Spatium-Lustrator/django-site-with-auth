@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+html, body {
+    background-image: url('https://gas-kvas.com/grafic/uploads/posts/2024-01/gas-kvas-com-p-oboi-s-morskim-podvodnim-mirom-1.jpg');
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Montserrat;
+}
+
+input[type=text],input[type=email],input[type=password] {
+	appearance: none;
+    font-family: Montserrat;
+	border: none;
+	outline: none;
+	border-bottom: .2em solid #66CDAA;
+	background: rgba(#66CDAA, .2);
+	border-radius: .2em .2em 0 0;
+	padding: .4em;
+    box-shadow:inset 0 0 0 1000px #DCFEF3;
+	
+}
+
+input:-webkit-autofill{
+	box-shadow:inset 0 0 0 1000px #DCFEF3;
+}
+  
+.content {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    overflow: auto;   
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    position: fixed;
+    width: 400px;
+    box-shadow: 12px 20px 78px 25px #000000;
+}
+
+.form-element {
+    width: 80%;
+    margin: 2% auto;
+    
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+}
+#submit-container{
+    background-color: red;
+    left: 50%;
+    top: 50%;
+    align-items: center;
+    justify-content: center;
+    
+    /* transform: translate(-50%, -50%); */
+}
+
+#login-button {
+    transform: translate(-0%, -0%);
+    color: #66CDAA;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    display: inline-block;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    border: 2px solid #66CDAA;
+    transition: 0.02s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+}
+#login-button::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    border-radius: 5px;
+    background: #66CDAA;
+    transition: 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+    z-index: -1;
+}
+#login-button::after {
+    content: "";
+    display: inline-block;
+    background-image: url("https://cdn-icons-png.flaticon.com/128/109/109617.png");
+    position: absolute;
+    top: 0;
+    left: calc(100% - 3em);
+    right: 3em;
+    bottom: 0;
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: right 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+}
+#login-button:hover {
+    padding: 0.5em 3.5em 0.5em 0.5em;
+}
+#login-button:hover::before {
+    left: calc(100% - 3em);
+    right: 0;
+    transition: 0.3s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+}
+#login-button:hover::after {
+    right: 0;
+    transition: right 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+}
