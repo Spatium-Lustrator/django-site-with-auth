@@ -8,14 +8,18 @@
     <title>LOGIN PAGE</title>
 </head>
 <body>
-    <form method="post">
-        {% csrf_token %}
-        <input type="text" name="username">
-        <input type="password" name="password">
-        <input type="submit" value="LOGIN">
-        <div><a href="{% url 'register' %}">REGISTER</a></div>
-        {{ form.errors }}
-    </form>
+    <div class="content">
+        <div class="container">
+            <form id="login-form" method="post">
+                {% csrf_token %}
+                <input class="form-element" type="text" name="username" placeholder="Username">
+                <input class="form-element" type="password" name="password" placeholder="Password">
+                <a id="login-button" class="form-element" href="#" onclick="document.getElementById('login-form').submit()">LOGIN</a>
+                <div><a href="{% url 'register' %}">REGISTER</a></div>
+                {{ form.errors }}
+            </form>
+        </div>
+    </div>
     
     
 </body>
