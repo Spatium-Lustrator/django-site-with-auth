@@ -10,6 +10,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes
 from django.core.mail import send_mail
 from django.shortcuts import redirect
+import json
 from . import models
 from . import forms
 User = get_user_model()
@@ -17,9 +18,42 @@ User = get_user_model()
 def home_view(request):
     return render(request, 'main/home.html')
 
+def basic_vote_view(request):
+    votes_set = models.Vote.objects.all()
+    trails_set = models.Trail.objects.all()
+    vote_ids = [vote.vote_trail_id for vote in sorted(votes_set, key=lambda trail: trail.vote_count_of_votes, reverse=True)]
+    votes = [vote.vote_count_of_votes for vote in sorted(votes_set, key=lambda trail: trail.vote_count_of_votes, reverse=True)]
+    votes_and_indexes = {vote.vote_trail_id:vote.vote_count_of_votes for vote in sorted(votes_set, key=lambda trail: trail.vote_count_of_votes, reverse=True)}
+    print(vote_ids)
+    trail_for_vote = [trail for trail in trails_set if trail.id in vote_ids]
+    n = 2
+    context = {"n_best_trails": trail_for_vote, "n_best_votes": json.dumps(votes)}
+    return render(request, 'main/basic_vote.html', context)
+
+def federal_vote_view(request):
+    votes_set = models.FederalVote.objects.all()
+    trails_set = models.Trail.objects.all()
+    vote_ids = [vote.vote_trail_id for vote in sorted(votes_set, key=lambda trail: trail.vote_count_of_votes, reverse=True)]
+    print(vote_ids)
+    trail_for_vote = [trail for trail in trails_set if trail.id in vote_ids]
+    
+    context = {"n_best_trails": trail_for_vote[:2]}
+    return render(request, 'main/federal_vote.html', context)
+
 @login_required
 def profile_view(request):
     return render(request, 'main/profile.html')
+
+@login_required
+def vote_view(request):
+    votes_set = models.Vote.objects.all()
+    trails_set = models.Trail.objects.all()
+    vote_ids = [vote.vote_trail_id for vote in votes_set]
+    print([trail.id for trail in trails_set])
+    trail_for_vote = [trail for trail in trails_set if trail.id in vote_ids]
+    print(trail_for_vote[0])
+    context = {"first_trail":trail_for_vote[0],"list_of_trails": trail_for_vote[1:]}
+    return render(request, 'main/vote.html', context)
 
 class EmailConfirmationSentView(TemplateView):
     template_name = 'registration/email_confirmation_sent.html'
