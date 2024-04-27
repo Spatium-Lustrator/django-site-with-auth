@@ -22,4 +22,9 @@ urlpatterns = [
     path('profile/add_money/<int:sum>/', views.add_money_view, name='add_money'),
 
     path('profile/admin/change_state/', views.change_state, name='admin_golos'),
+
+    path('email-confirmed/', views.EmailConfirmedView.as_view(), name='email_confirmed'),
+    path('email-confirmation-sent/', views.EmailConfirmationSentView.as_view(), name='email_confirmation_sent'),
+    path('confirm-email-failed/', views.EmailConfirmationFailedView.as_view(), name='email_confirmation_failed'),
+    path('confirm-email/<str:uidb64>/<str:token>/', views.UserConfirmEmailView.as_view(), name='confirm_email')
 ]

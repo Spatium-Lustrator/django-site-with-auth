@@ -2,6 +2,16 @@ body {
     margin: 0;
 }
 
+@font-face {
+  font-family: Rimma;
+  src: url(../fonts/RIMMA_SANS-BOLD.TTF);
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat-VariableFont_wght.ttf);
+}
+
 .navbar_h {
     background-color: #eee;
     overflow: hidden;
@@ -13,7 +23,8 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 20px;
+  font-family: Montserrat, sans-serif;
 }
 
 .navbar_h a:hover {
@@ -44,4 +55,92 @@ body {
 .all_routes .card{
     margin: 15px;
     display: inline-block;
+}
+
+
+
+body{
+  background-color: #eee;
+}
+
+.importanttag{
+  text-align: center;
+}
+
+.tropimg{
+  width: 100%;
+  height: 600px;
+  /* padding: 0 30px; */
+}
+
+.textimg{
+  padding: 0;
+  font-weight: bold;
+  font-size: 50px;
+  padding: 0;
+}
+
+.center{
+  align-items: center;
+}
+
+.block2{
+  padding: 0 30px;
+  border: 3px solid black;
+  border-radius: 12px;
+  border-style: ridge;
+  width: 89.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title2{
+  color: #576544;
+  font-size: 40px;
+  font-family: Rimma, sans-serif;
+}
+
+.block2 p{
+  font-size: 30px;
+  color: #2c412b;
+  font-family: Montserrat, sans-serif;
+}
+
+.block3{
+  padding: 0 30px;
+  border: 3px solid black;
+  border-radius: 12px;
+  border-style: ridge;
+  width: 89.5%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  font-family: Montserrat, sans-serif;
+}
+
+.block3 li{
+  font-size: 30px;
+  color: #2c412b;
+  list-style-type: square;
+}
+
+.block3text{
+  font-size: 20px;
+}
+
+.block4{
+  padding: 0 30px;
+  border: 3px solid black;
+  border-radius: 12px;
+  border-style: ridge;
+  width: 89.5%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  font-family: Montserrat, sans-serif;
+}
+
+.block4 li{
+  font-size: 30px;
+  color: #2c412b;
 }
