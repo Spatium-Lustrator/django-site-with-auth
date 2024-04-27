@@ -1,0 +1,37 @@
+.title{
+    text-align: center;
+}
+
+.grid-container{
+    position: relative;
+    height: 66.5px;
+}
+
+.end_stage{
+    color: black;
+    background-color: #ff0303;
+    border-radius: 15px;
+    width: 300px;
+    height: 50px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.next_stage{
+    color: white;
+    background-color: #0cbb0c;
+    border-radius: 15px;
+    width: 300px;
+    height: 50px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

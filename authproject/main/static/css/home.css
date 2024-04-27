@@ -28,13 +28,15 @@ body {
 }
 
 .navbar_h a:hover {
-  background-color: #222;
-  color: white;
+  background-color: #87936e;
+  color: #fff;
+  border-radius: 12px;
 }
 
 .navbar_h a.active {
-  background-color: #010d7e;
+  background-color: #576544;
   color: #fff;
+  border-radius: 12px;
 }
 
 .navbar_h a.img{
