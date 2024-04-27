@@ -8,6 +8,7 @@ class User(models.Model):
     user_gender = models.BooleanField(default=False)
     user_postcode = models.IntegerField(default=False)
     user_phone_number = models.IntegerField(default=False)
+    user_balance = models.IntegerField(default=False)
     user_password = models.CharField(max_length=20)
 
     def __str__(self):
