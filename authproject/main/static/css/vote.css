@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.flex-container {
+    display: flex; /* Включаем flexbox */
+}
+
+.image {
+    flex: 1 0 auto; /* Занимает все доступное пространство */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.info {
+    flex: 0 0 300px; /* Занимает фиксированную ширину (300px) */
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.btn {
+    background-color: #859560;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 12px;
+}
+
+.center{
+    align-items: center;
+    text-align: center;
+}
+
+.btn.ots{
+    margin: 20px 0 0;
+}
+
+footer {
+    background-color: #f0f0f0;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.description {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+
+.map-container {
+    width: 100%;
+    max-width: 600px; /* Ограничьте ширину карты, если нужно */
+    margin: 20px auto;
+    border: 1px solid #ccc;
+}

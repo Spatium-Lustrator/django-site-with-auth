@@ -1,0 +1,55 @@
+{% extends 'main/Home.html' %}
+{% load static %}
+
+{% block imports %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% endblock %}
+
+
+{% block content %}
+    <div class="profile">
+        <div class="side-panel">
+            <a class="category" href="{% url 'profile' %}">Информация</a>
+            {% if user.is_staff %}
+                <a class="category" href="{% url 'admin_golos' %}">Голосование</a>
+                <a class="category" href="{% url 'logout' %}">Выйти</a>
+            {% else %}
+                <a class="category" href="{% url 'history' %}">Достижения</a>
+                <a class="category" href="{% url 'logout' %}">Выйти</a>
+            {% endif %}
+        </div>
+        <div class="content-panel">
+            <div class="information-about-account">
+                <p class="title">Управление процессом</p>
+                {% if federal %}
+                    <div class="grid-container">
+                        <button id="updateButton" class="end_stage">Закончить голосование</button>
+                    </div>
+                {% elif basic %}
+                    <div class="grid-container">
+                        <button id="updateButton" class="next_stage">Следующий этап голосования!</button>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#updateButton").click(function(){
+        $.ajax({
+            url: 'http://127.0.0.1:8000/profile/admin/change_state/',
+            type: 'POST',
+            success: function(data) {
+                location.reload()
+            },
+        });
+    });
+  });
+</script>
+{% endblock %}

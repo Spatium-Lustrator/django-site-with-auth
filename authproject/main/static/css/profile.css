@@ -1,0 +1,78 @@
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 130px 0;
+}
+
+.profile .side-panel {
+  font-family: "SB Sans Interface Semibold", sans-serif;
+  height: 170px;
+  width: 240px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+.profile .side-panel .category.selected {
+  cursor: pointer;
+  padding: 18px;
+  width: 240px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile .side-panel .category {
+  cursor: pointer;
+  padding: 18px;
+  width: 240px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.profile .content-panel .information-about-account {
+  font-family: "SB Sans Interface", sans-serif;
+  width: 900px;
+  border-radius: 12px;
+  padding: 32.8px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+.profile .content-panel .information-about-account .title {
+  font-family: "SB Sans Interface Semibold", sans-serif;
+}
+.profile .content-panel .information-about-account .grid-container {
+  font-family: "SB Sans Interface", sans-serif;
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.profile .content-panel .information-about-account .grid-container .grid-item {
+  font-family: "SB Sans Interface", sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  text-align: left;
+}
+.profile .content-panel .information-about-account .grid-container > *:nth-child(3n) {
+  font-family: "SB Sans Interface Semibold", sans-serif;
+  cursor: default;
+  color: green;
+  text-align: end;
+}
+
+.visited-text {
+    font-size: 18px;
+    color: darkgreen;
+    margin-bottom: 20px;
+}
+
+.end-text {
+    font-size: 18px;
+    color: red;
+    margin-bottom: 20px;
+}

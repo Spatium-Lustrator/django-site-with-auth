@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+}
+
+.navbar_h {
+    background-color: #eee;
+    overflow: hidden;
+  }
+
+.navbar_h a {
+  float: right;
+  color: #434B4D;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar_h a:hover {
+  background-color: #222;
+  color: white;
+}
+
+.navbar_h a.active {
+  background-color: #010d7e;
+  color: #fff;
+}
+
+.navbar_h a.img{
+  padding: 2.5px 7px;
+  text-align: top;
+  float: left;
+  background-color: #eee;
+  margin: 0;
+}
+
+
+.all_routes {
+    width: 100%;
+    padding: 50px 50px;
+    display: inline-block;
+}
+
+.all_routes .card{
+    margin: 15px;
+    display: inline-block;
+}
