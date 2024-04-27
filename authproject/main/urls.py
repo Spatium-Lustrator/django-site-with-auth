@@ -7,6 +7,7 @@ urlpatterns = [
     path('profile/', views.profile_view, name='profile'),
     path('vote/', views.vote_view, name='vote'),
     path('basic_vote/', views.basic_vote_view, name='basic_vote'),
+    path('first_vote/', views.first_vote_view, name='first_vote'),
     path('federal_vote/', views.basic_vote_view, name='federal_vote'),
     path('register/', views.RegisterView.as_view(), name="register"),
     path('email-confirmed/', views.EmailConfirmedView.as_view(), name='email_confirmed'),

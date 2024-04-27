@@ -15,20 +15,32 @@ from . import models
 from . import forms
 User = get_user_model()
 # Create your views here.
+def finish_basic_vote():
+    all_entries = []
+    # проходимся по 8 регионам
+    for region in range(1, 9):
+        entries = models.BasicVote.objects.filter(big_region_id=region).order_by('-count_of_votes')[:3]
+        all_entries.extend(entries)
+    return all_entries
+
 def home_view(request):
     return render(request, 'main/home.html')
 
+def first_vote_view(request):
+    context = {"list_of_good_regions":finish_basic_vote()}
+    return render(request, "main/first_vote.html", context)
+
 def basic_vote_view(request):
-    votes_set = models.Vote.objects.all()
-    trails_set = models.Trail.objects.all()
-    vote_ids = [vote.vote_trail_id for vote in sorted(votes_set, key=lambda trail: trail.vote_count_of_votes, reverse=True)]
-    votes = [vote.vote_count_of_votes for vote in sorted(votes_set, key=lambda trail: trail.vote_count_of_votes, reverse=True)]
-    votes_and_indexes = {vote.vote_trail_id:vote.vote_count_of_votes for vote in sorted(votes_set, key=lambda trail: trail.vote_count_of_votes, reverse=True)}
-    print(vote_ids)
-    trail_for_vote = [trail for trail in trails_set if trail.id in vote_ids]
-    n = 2
-    context = {"n_best_trails": trail_for_vote, "n_best_votes": json.dumps(votes)}
-    return render(request, 'main/basic_vote.html', context)
+    # votes_set = models.Vote.objects.all()
+    # trails_set = models.Trail.objects.all()
+    # vote_ids = [vote.vote_trail_id for vote in sorted(votes_set, key=lambda trail: trail.vote_count_of_votes, reverse=True)]
+    # votes = [vote.vote_count_of_votes for vote in sorted(votes_set, key=lambda trail: trail.vote_count_of_votes, reverse=True)]
+    # votes_and_indexes = {vote.vote_trail_id:vote.vote_count_of_votes for vote in sorted(votes_set, key=lambda trail: trail.vote_count_of_votes, reverse=True)}
+    # print(vote_ids)
+    # trail_for_vote = [trail for trail in trails_set if trail.id in vote_ids]
+    # n = 2
+    # context = {"n_best_trails": trail_for_vote, "n_best_votes": json.dumps(votes)}
+    return render(request, 'main/basic_vote.html')
 
 def federal_vote_view(request):
     votes_set = models.FederalVote.objects.all()

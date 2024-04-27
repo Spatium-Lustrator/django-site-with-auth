@@ -18,7 +18,7 @@ class CurrentState(models.Model):
 
 class BasicVote(models.Model):
     region_id = models.OneToOneField('Region', primary_key=True, on_delete=models.CASCADE)
-    big_region_id = models.OneToOneField('BigRegion', on_delete=models.CASCADE)
+    big_region_id = models.IntegerField()
     count_of_votes = models.IntegerField()
 
 class FederalVote(models.Model):
