@@ -9,3 +9,10 @@ class User(models.Model):
 
     def __str__(self):
         return self.field_name
+
+
+class Votes(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.CharField(max_length=250)
+    votes = models.IntegerField()
+    donates = models.FloatField()
