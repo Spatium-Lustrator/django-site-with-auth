@@ -14,10 +14,11 @@
                 {% csrf_token %}
                 <input class="form-element" type="text" name="username">
                 <input class="form-element" type="email" name="email">
+                <input class="form-element" type="text" name="user_phone_number">
+                <input class="form-element" type="checkbox" name="user_gender">
+                <input class="form-element" type="text" name="user_postcode">
                 <input class="form-element" type="password" name="password1">
                 <input class="form-element" type="password" name="password2">
-                <!-- <input class="form-element" type="submit" id="registration-submit" value="SIGNUP"> -->
-                <!-- <div   id="submit-container" class="form-element"><a>submit</a></div> -->
                 <a class="form-element" href="#" onclick="document.getElementById('registration-form').submit()">SIGN UP</a>
                 {{ form.errors }}
             </form>
