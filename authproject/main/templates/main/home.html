@@ -1,9 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <title>HOME</title>
+    <div class="navbar">
+        <a class="active" href="#donate">Donate</a>
+        <a href="{% url 'register' %}">Sign Up</a>
+        <a href="{% url 'profile' %}">Login</a>
+    </div>
 </head>
 <body>
     <div><a href="{% url 'profile' %}">LOGIN</a></div>
