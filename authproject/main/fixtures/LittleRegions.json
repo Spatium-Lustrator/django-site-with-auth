@@ -1,0 +1,222 @@
+[
+  {
+    "model": "main.region",
+    "pk": 1,
+    "fields": {
+      "name": "Москва",
+      "region_preview": "https://example.com/preview/moscow",
+      "short_description": "Москва - столица России и центр федерального округа. Развито метро                  ",
+      "big_region": 1
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 2,
+    "fields": {
+      "name": "Воронеж",
+      "region_preview": "https://example.com/preview/voronezh",
+      "short_description": "Воронеж - крупный город Центрального федерального округа",
+      "big_region": 1
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 3,
+    "fields": {
+      "name": "Рязань",
+      "region_preview": "https://example.com/preview/ryazan",
+      "short_description": "Рязань - исторический город Центрального федерального округа",
+      "big_region": 1
+    }
+  },
+    {
+    "model": "main.region",
+    "pk": 3,
+    "fields": {
+      "name": "Смоленская область",
+      "region_preview": "https://example.com/preview/ryazan",
+      "short_description": "Смоленск - исторический город Центрального федерального округа",
+      "big_region": 1
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 4,
+    "fields": {
+      "name": "Санкт-Петербург",
+      "region_preview": "https://example.com/preview/spb",
+      "short_description": "Санкт-Петербург - вторая столица России",
+      "big_region": 2
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 5,
+    "fields": {
+      "name": "Архангельск",
+      "region_preview": "https://example.com/preview/arkhangelsk",
+      "short_description": "Архангельск - крупный город Северо-Западного федерального округа",
+      "big_region": 2
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 4,
+    "fields": {
+      "name": "Чеченская Республика",
+      "region_preview": "https://example.com/preview/chechnya",
+      "short_description": "Чеченская Республика - регион, известный своими живописными пейзажами и богатой историей, включающей в себя архитектуру, традиции и культуру.",
+      "big_region": 4
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 5,
+    "fields": {
+      "name": "Республика Дагестан",
+      "region_preview": "https://example.com/preview/dagestan",
+      "short_description": "Дагестан - самый южный регион России, известен своими величественными горами и разнообразием культур.",
+      "big_region": 4
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 6,
+    "fields": {
+      "name": "Карачаево-Черкесская Республика",
+      "region_preview": "https://example.com/preview/karachay-cherkessia",
+      "short_description": "Карачаево-Черкессия - регион, известный своими живописными пейзажами, горнолыжными курортами и культурным наследием.",
+      "big_region": 4
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 7,
+    "fields": {
+      "name": "Кабардино-Балкарская Республика",
+      "region_preview": "https://example.com/preview/kabardino-balkaria",
+      "short_description": "Кабардино-Балкария - известна своими старинными традициями, национальной кухней и впечатляющими горами.",
+      "big_region": 4
+    }
+  },
+    {
+    "model": "main.region",
+    "pk": 8,
+    "fields": {
+      "name": "Нижегородская область",
+      "region_preview": "https://example.com/preview/nizhny_novgorod",
+      "short_description": "Нижегородская область - крупный экономический и образовательный центр, обладающий богатой историей и культурным наследием. Включает в себя одноименный город Нижний Новгород.",
+      "big_region": 5
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 9,
+    "fields": {
+      "name": "Республика Татарстан",
+      "region_preview": "https://example.com/preview/tatarstan",
+      "short_description": "Татарстан - автономная республика, известная своей уникальной культурой, историей и татарской кухней. Татарстан включает в себя города Казань и Набережные Челны.",
+      "big_region": 5
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 10,
+    "fields": {
+      "name": "Самарская область",
+      "region_preview": "https://example.com/preview/samara",
+      "short_description": "Самарская область - важный промышленный и культурный центр, расположенный в Нижнем Поволжье. Включает в себя город Самару.",
+      "big_region": 5
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 11,
+    "fields": {
+      "name": "Республика Башкортостан",
+      "region_preview": "https://example.com/preview/bashkortostan",
+      "short_description": "Башкортостан - автономная республика, известна своими красивыми пейзажами, уникальной культурой и башкирским медом.",
+      "big_region": 5
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 12,
+    "fields": {
+      "name": "Новосибирская область",
+      "region_preview": "https://example.com/preview/novosibirsk",
+      "short_description": "Новосибирская область - сердце Сибири, крупнейший научный и образовательный центр региона. Включает в себя город Новосибирск.",
+      "big_region": 6
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 13,
+    "fields": {
+      "name": "Иркутская область",
+      "region_preview": "https://example.com/preview/irkutsk",
+      "short_description": "Иркутская область - дом для озера Байкал, самого глубокого озера в мире. Иркутск является крупным городом в области.",
+      "big_region": 6
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 14,
+    "fields": {
+      "name": "Красноярский край",
+      "region_preview": "https://example.com/preview/krasnoyarsk",
+      "short_description": "Красноярский край - один из самых обширных регионов в России, известен своими естественными ресурсами и впечатляющей природой. Включает в себя город Красноярск.",
+      "big_region": 6
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 15,
+    "fields": {
+      "name": "Алтайский край",
+      "region_preview": "https://example.com/preview/altai",
+      "short_description": "Алтайский край - известен своими красивыми горными пейзажами, уникальной фауной и флорой. Включает в себя город Барнаул.",
+      "big_region": 6
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 16,
+    "fields": {
+      "name": "Свердловская область",
+      "region_preview": "https://example.com/preview/sverdlovsk",
+      "short_description": "Свердловская область - важный промышленный регион, расположенный на востоке Уральских гор. Известен своими историческими городами и горнодобывающей индустрией.",
+      "big_region": 7
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 17,
+    "fields": {
+      "name": "Пермский край",
+      "region_preview": "https://example.com/preview/perm",
+      "short_description": "Пермский край - известен своими естественными ресурсами, промышленностью и культурными достопримечательностями, включая древние пещеры и исторические поселения.",
+      "big_region": 7
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 18,
+    "fields": {
+      "name": "Челябинская область",
+      "region_preview": "https://example.com/preview/chelyabinsk",
+      "short_description": "Челябинская область - известна своей тяжелой промышленностью, научно-образовательными центрами и природными красотами, включая озеро Тургояк.",
+      "big_region": 7
+    }
+  },
+  {
+    "model": "main.region",
+    "pk": 19,
+    "fields": {
+      "name": "Тюменская область",
+      "region_preview": "https://example.com/preview/tyumen",
+      "short_description": "Тюменская область - огромный регион в Сибири, славящийся своими нефтяными месторождениями, историческими поселениями и обширными лесами.",
+      "big_region": 7
+    }
+  }
+]

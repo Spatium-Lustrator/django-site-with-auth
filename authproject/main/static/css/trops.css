@@ -1,10 +1,12 @@
 .btn{
+    color: white;
     border-color: #576544;
     background-color: #576544;
     border-radius: 12px;
 }
 
 .btn:hover{
+    color: white;
     border-color: #576544;
     background-color: #698147;
 }

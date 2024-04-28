@@ -35,6 +35,7 @@ class Trail(models.Model):
     trail_preview = models.TextField(max_length=1000)
     trail_short_description = models.TextField(max_length=100)
     trail_description = models.TextField(max_length=500)
+    region = models.ForeignKey("Region", on_delete=models.CASCADE)
 
 
 class CurrentState(models.Model):
@@ -43,7 +44,17 @@ class CurrentState(models.Model):
     federal_state = models.BooleanField(default=False)
 
 
-class BasicVote(models.Model):
+class Region(models.Model):
     region_id = models.IntegerField(primary_key=True)
-    big_region_id = models.IntegerField()
-    count_of_votes = models.IntegerField()
+    name = models.TextField(max_length=200)
+    region_preview = models.TextField(max_length=500)
+    short_description = models.TextField(max_length=500)
+    big_region = models.ForeignKey("BigRegion", on_delete=models.CASCADE, null=True)
+    count_of_votes = models.IntegerField(default=0)
+
+
+class BigRegion(models.Model):
+    big_region_id = models.IntegerField(primary_key=True)
+    name = models.TextField(max_length=200)
+    region_preview = models.TextField(max_length=500)
+    short_description = models.TextField(max_length=500)

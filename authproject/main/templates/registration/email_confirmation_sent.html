@@ -1,11 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/email_confirmation_sent.css' %}">
     <title>Document</title>
 </head>
 <body>
-    <div>sent</div>
+    <div class="center-screen">
+        <p>Письмо успешно отправлено &nbsp;&nbsp;&nbsp;<img src="https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRr7Fo47ma30hfDU1bl9-zLL2VWJpaZ9GouTEsZpkToL-DKtr6HK9wUF3QccKTu2MlKz1-qbxOh1KmyNkPjMc4" height="5%" width="5%"><br>
+        <a href="{% url 'home' %}" class="sslka"><u>На главную</u></a></p>
+    </div>
 </body>
 </html>

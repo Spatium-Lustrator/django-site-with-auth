@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ trop.trail_title }}</h5>
                     <p class="card-text">{{ trop.trail_short_description }}</p>
-                    <a href="{% url 'go_some_route' trop.id %}" class="btn btn-primary">Хочу отправиться!</a>
+                    <a href="{% url 'select_some_route' trop.id %}" class="btn btn-primary">Хочу отправиться!</a>
                 </div>
             </div>
         {% endfor %}

@@ -4,57 +4,81 @@
 {% block imports %}
     <title>Голосование</title>
     <link rel="stylesheet" href="{% static 'css/vote.css' %}">
-    <script src="https://maps.api.2gis.ru/2.0/loader.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=d09ddd62-8b37-4eab-83cb-427400d7fdba" type="text/javascript"></script>
 {% endblock %}
 
 {% block content %}
-<body>
-    <main>
-        <div class="container">
+<div class="container">
             <div class="flex-container">
                 <div class="image">
-                    <img src="{{ trail.trail_preview }}" alt="Памятник Советско-Польскому братству по оружию">
+                    <img src="{{ trail.trail_preview }}" alt="Памятник Советско-Польскому братству по оружию" height="500px" width="500px">
                 </div>
                 <div class="info">
                     <h2>{{ trail.trail_title }}</h2>
-                    <p>4980 проголосовали за территорию</p>
-                    <div class="center"><button class="btn"><a href="{% url 'vote_some_route' trail.id %}">Голосовать</a></button></div>
-                    <div class="center"><button class="btn"><a href="{% url 'donate_some_route' trail.id %}">Поддержать деньгами</a></button></div>
-                    <label for="exampleFormControlSelect1">Example select</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
-                </div>{% url 'vote_some_route' trail.id %}
+                    <a href="{% url 'go_some_route' trail.id %}"><div class="center"><button class="btn">Начать путешествие!</button></div></a>
+                </div>
             </div>
         </div>
 
-        <h3 style="padding: 0 450px;">Начало маршрута</h3>
-        <div id="map" style="width: 52%; height: 400px; margin: auto"></div>
-        <script>
-            DG.then(function() {
-                var map = DG.map('map', {
-                    center: [54.98, 82.89],
-                    zoom: 15
-                });
+        <h3 style="padding: 0 380px;">Маршрут</h3>
 
-                DG.marker([54.98, 82.89]).addTo(map);
-            });
-        </script>
-
-        <div class="center"><button class="btn ots">ПОЛНЫЙ МАРШРУТ</button></div>
+        <div id="map"></div>
 
         <div class="container">
             <div class="description">
-                <h2>Описание пути</h2>
+                <h2>Описание тропы</h2>
                 <p>{{ trail.trail_description }}</p>
             </div>
         </div>
 
-    </main>
+<script>
+function init() {
+    var pointA = [55.749, 37.524],
+        pointB = "Москва, Красная площадь",
+        /**
+         * Создаем мультимаршрут.
+         * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/multiRouter.MultiRoute.xml
+         */
+        multiRoute = new ymaps.multiRouter.MultiRoute({
+            referencePoints: [
+                pointA,
+                pointB
+            ],
+            params: {
+                //Тип маршрутизации - пешеходная маршрутизация.
+                routingMode: 'pedestrian'
+            }
+        }, {
+            // Автоматически устанавливать границы карты так, чтобы маршрут был виден целиком.
+            boundsAutoApply: true
+        });
+        var changePointsButton = new ymaps.control.Button({
+            data: {content: "Поменять местами точки А и В"},
+            options: {selectOnClick: true}
+        });
 
-</body>
+        // Объявляем обработчики для кнопки.
+        changePointsButton.events.add('select', function () {
+            multiRoute.model.setReferencePoints([pointB, pointA]);
+        });
+
+        changePointsButton.events.add('deselect', function () {
+            multiRoute.model.setReferencePoints([pointA, pointB]);
+        });
+
+        // Создаем карту с добавленной на нее кнопкой.
+        var myMap = new ymaps.Map('map', {
+            center: [55.739625, 37.54120],
+            zoom: 12,
+            controls: [changePointsButton]
+        }, {
+            buttonMaxWidth: 300
+        });
+
+        // Добавляем мультимаршрут на карту.
+        myMap.geoObjects.add(multiRoute);
+    }
+
+ymaps.ready(init);
+</script>
 {% endblock %}

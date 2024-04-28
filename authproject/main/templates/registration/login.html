@@ -15,12 +15,9 @@
                 <input class="form-element" type="text" name="username" placeholder="Username">
                 <input class="form-element" type="password" name="password" placeholder="Password">
                 <a id="login-button" class="form-element" href="#" onclick="document.getElementById('login-form').submit()">LOGIN</a>
-                <div><a href="{% url 'register' %}">REGISTER</a></div>
-                {{ form.errors }}
+                <a id="login-button" class="form-element" href="{% url 'register' %}">REGISTER</a>
             </form>
         </div>
     </div>
-    
-    
 </body>
 </html>

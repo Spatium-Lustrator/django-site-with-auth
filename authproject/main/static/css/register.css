@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 html, body {
-    background-image: url('https://gas-kvas.com/grafic/uploads/posts/2024-01/gas-kvas-com-p-oboi-s-morskim-podvodnim-mirom-1.jpg');
+    background-image: url('https://img.freepik.com/free-photo/grass-covered-hill_198169-95.jpg?t=st=1714263430~exp=1714267030~hmac=dd0d312e41bd6fb2dac8501306f51f5eec7e1832d8f788b0cb078fda06a10142&w=826');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -14,16 +17,15 @@ input[type=text],input[type=email],input[type=password] {
     font-family: Montserrat;
 	border: none;
 	outline: none;
-	border-bottom: .2em solid #66CDAA;
-	background: rgba(#66CDAA, .2);
+	border-bottom: .2em solid #859560;
+    background: rgba(133, 149, 96, .5);
 	border-radius: .2em .2em 0 0;
 	padding: .4em;
-    box-shadow:inset 0 0 0 1000px #DCFEF3;
-	
+    box-shadow:inset 0 0 0 1000px #b5ce7a;
 }
 
 input:-webkit-autofill{
-	box-shadow:inset 0 0 0 1000px #DCFEF3;
+    box-shadow:inset 0 0 0 1000px #b5ce7a;
 }
   
 .content {
@@ -69,7 +71,8 @@ input:-webkit-autofill{
 
 a {
     transform: translate(-0%, -0%);
-    color: #66CDAA;
+    color: #859560;
+    border: 2px solid #b5ce7a;
     border-radius: 10px;
     text-decoration: none;
     font-size: 15px;
@@ -77,7 +80,6 @@ a {
     font-family: Montserrat;
     text-transform: uppercase;
     padding: 0.5em 1em;
-    border: 2px solid #66CDAA;
     transition: 0.02s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
 }
 a::before {
@@ -89,7 +91,7 @@ a::before {
     right: 100%;
     bottom: 0;
     border-radius: 5px;
-    background: #66CDAA;
+    background: #b5ce7a;
     transition: 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s cubic-bezier(0.1, 0, 0.1, 1);
     z-index: -1;
 }

@@ -9,6 +9,17 @@ body{
   padding: 130px 0;
 }
 
+.btn{
+  border-color: #576544;
+  background-color: #576544;
+  border-radius: 12px;
+}
+
+.btn:hover{
+  border-color: #576544;
+  background-color: #698147;
+}
+
 /* .side-panel a{
   float: right;
   color: #434B4D;

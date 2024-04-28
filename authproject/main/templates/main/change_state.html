@@ -37,6 +37,23 @@
                         <button id="updateButton" class="next_stage">Следующий этап голосования!</button>
                     </div>
                 {% endif %}
+                <h1>Победители</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                          {% for region in regions %}
+                            <th>{{region.name}}</th>
+                          {% endfor %}
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% for region in regions %}
+                                <td>{{region.count_of_votes}}</td>
+                            {% endfor %}
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

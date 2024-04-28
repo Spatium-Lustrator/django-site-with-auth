@@ -1,0 +1,74 @@
+[
+  {
+    "model": "main.bigregion",
+    "pk": 1,
+    "fields": {
+      "name": "Центральный федеральный округ",
+      "region_preview": "https://i.pinimg.com/474x/19/74/03/1974030ad98d993eab87f6993bef8dc4.jpg",
+      "short_description": "Описание Центрального федерального округа"
+    }
+  },
+  {
+    "model": "main.bigregion",
+    "pk": 2,
+    "fields": {
+      "name": "Северо-Западный федеральный округ",
+      "region_preview": "https://i.pinimg.com/474x/19/74/03/1974030ad98d993eab87f6993bef8dc4.jpg",
+      "short_description": "Описание Северо-Западного федерального округа"
+    }
+  },
+  {
+    "model": "main.bigregion",
+    "pk": 3,
+    "fields": {
+      "name": "Южный федеральный округ",
+      "region_preview": "https://i.pinimg.com/474x/19/74/03/1974030ad98d993eab87f6993bef8dc4.jpg",
+      "short_description": "Описание Южного федерального округа"
+    }
+  },
+  {
+    "model": "main.bigregion",
+    "pk": 4,
+    "fields": {
+      "name": "Северо-Кавказский федеральный округ",
+      "region_preview": "https://i.pinimg.com/474x/19/74/03/1974030ad98d993eab87f6993bef8dc4.jpg",
+      "short_description": "Описание Северо-Кавказского федерального округа"
+    }
+  },
+  {
+    "model": "main.bigregion",
+    "pk": 5,
+    "fields": {
+      "name": "Приволжский федеральный округ",
+      "region_preview": "https://i.pinimg.com/474x/19/74/03/1974030ad98d993eab87f6993bef8dc4.jpg",
+      "short_description": "Описание Приволжского федерального округа"
+    }
+  },
+  {
+    "model": "main.bigregion",
+    "pk": 6,
+    "fields": {
+      "name": "Уральский федеральный округ",
+      "region_preview": "https://i.pinimg.com/474x/19/74/03/1974030ad98d993eab87f6993bef8dc4.jpg",
+      "short_description": "Описание Уральского федерального округа"
+    }
+  },
+  {
+    "model": "main.bigregion",
+    "pk": 7,
+    "fields": {
+      "name": "Сибирский федеральный округ",
+      "region_preview": "https://i.pinimg.com/474x/19/74/03/1974030ad98d993eab87f6993bef8dc4.jpg",
+      "short_description": "Описание Сибирского федерального округа"
+    }
+  },
+  {
+    "model": "main.bigregion",
+    "pk": 8,
+    "fields": {
+      "name": "Дальневосточный федеральный округ",
+      "region_preview": "https://i.pinimg.com/474x/19/74/03/1974030ad98d993eab87f6993bef8dc4.jpg",
+      "short_description": "Описание Дальневосточного федерального округа"
+    }
+  }
+]

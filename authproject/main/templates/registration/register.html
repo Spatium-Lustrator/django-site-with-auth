@@ -12,19 +12,18 @@
         <div class="container">
            <form id="registration-form" method="post">
                 {% csrf_token %}
-                <input class="form-element" type="text" name="username">
-                <input class="form-element" type="email" name="email">
-                <input class="form-element" type="text" name="user_phone_number">
-                <input class="form-element" type="checkbox" name="user_gender">
-                <input class="form-element" type="text" name="user_postcode">
-                <input class="form-element" type="password" name="password1">
-                <input class="form-element" type="password" name="password2">
+                <input class="form-element" type="text" name="username" placeholder="Username">
+                <input class="form-element" type="email" name="email" placeholder="Email">
+                <input class="form-element" type="text" name="user_phone_number" placeholder="Phone">
+                <input class="form-element" type="text" name="user_gender" placeholder="Gender">
+                <input class="form-element" type="text" name="user_postcode" placeholder="Postcode">
+                <input class="form-element" type="password" name="password1" placeholder="Password">
+                <input class="form-element" type="password" name="password2" placeholder="Confrim password">
                 <a class="form-element" href="#" onclick="document.getElementById('registration-form').submit()">SIGN UP</a>
+                <a id="login-button" class="form-element" href="{% url 'login' %}">LOGIN</a>
                 {{ form.errors }}
             </form>
         </div>
     </div>
-    
-    
 </body>
 </html>

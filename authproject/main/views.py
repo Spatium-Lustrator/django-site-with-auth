@@ -18,7 +18,7 @@ from django.views.generic.edit import FormView
 from django.urls import reverse_lazy, reverse
 from . import models
 from . import forms
-from .models import Trail, CurrentState, BasicVote
+from .models import Trail, CurrentState, BigRegion
 
 User = get_user_model()
 
@@ -92,8 +92,13 @@ def change_state(request):
         elif state.federal_state:
             return render(request, 'main/change_state.html', {"federal": True})
         else:
-            top_ten = 10
-            return render(request, 'main/change_state.html', {"federal": True})
+            top_24 = []
+            for region in range(1, 9):
+                top_3_from = models.Region.objects.filter(big_region_id=region).order_by('-count_of_votes')[:3]
+                top_24.extend(top_3_from)
+            #top_10 = top_24.order_by('-count_of_votes')[:10]
+            top_10 = sorted(top_24, key=lambda x: x.count_of_votes)[:10]
+            return render(request, 'main/change_state.html', {"federal": True, 'regions': top_10})
     elif request.method == 'POST':
         if state.basic_state:
             state.basic_state = 0
@@ -225,3 +230,42 @@ class EmailConfirmationFailedView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Ваш электронный адрес не активирован'
         return context
+
+
+@login_required
+def deeper_vote_view(request, region_id):
+    region = models.Region.objects.get(region_id=region_id)
+    region.count_of_votes = region.count_of_votes + 1
+    region.save()
+    user = request.user
+    user.number_of_votes = user.number_of_votes - 1
+    user.save()
+    referer_url = request.META.get('HTTP_REFERER')
+    if referer_url:
+        return HttpResponseRedirect(referer_url)
+
+@login_required
+def deeper_voting_view(request, big_region_id):
+    entries = models.Region.objects.filter(big_region_id=big_region_id)
+    print(entries)
+    for ent in entries:
+        print(ent.name)
+    context = {"regions": entries}
+    return render(request, 'main/deeper_voting.html', context)
+
+@login_required
+def voting_view(request):
+    state = CurrentState.objects.get(id=1)
+    regions = [region for region in BigRegion.objects.all()]
+    if request.method == 'GET':
+        if state.basic_state:
+            return render(request, 'main/voting_page.html', {"basic": True, "big_regions": regions})
+        elif state.federal_state:
+            all_entries = []
+            for region in range(1, 9):
+                entries = models.Region.objects.filter(big_region_id=region).order_by('-count_of_votes')[:3]
+                all_entries.extend(entries)
+            return render(request, 'main/voting_page.html', {"federal": True, "regions": all_entries})
+        else:
+            top_ten = 10
+            return render(request, 'main/voting_page.html', {"federal": True, "big_regions": regions})
